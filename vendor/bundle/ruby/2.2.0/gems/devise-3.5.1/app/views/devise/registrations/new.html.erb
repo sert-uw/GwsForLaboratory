@@ -1,20 +1,20 @@
-<h2>新規登録</h2>
+<h2><%= t('devise.labels.sign_up') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label t('view.name') %><br />
+    <%= f.label t('devise.labels.name') %><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label t('view.email') %><br />
+    <%= f.label t('devise.labels.email') %><br />
     <%= f.email_field :email %>
   </div>
 
   <div class="field">
-    <%= f.label t('view.password') %><br />
+    <%= f.label t('devise.labels.password') %><br />
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上)</em>
     <% end %><br />
@@ -22,12 +22,12 @@
   </div>
 
   <div class="field">
-    <%= f.label t('view.password_confirm') %><br />
+    <%= f.label t('devise.labels.password_confirm') %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit t('devise.labels.sign_up') %>
   </div>
 <% end %>
 

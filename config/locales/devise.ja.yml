@@ -1,7 +1,21 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
-jp:
+ja:
   devise:
+    labels:
+      login: "ログイン"
+      sign_up: "新規登録"
+      fogot_pass: "パスワードを忘れた方"
+      name: "名前"
+      email: "メールアドレス"
+      password: "パスワード"
+      password_confirm: "パスワード(確認)"
+      current_password: "現在のパスワード"
+      remember_me: "ログイン状態を維持する"
+      settings: "設定"
+      logout: "ログアウト"
+      update: "更新"
+      back: "戻る"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -56,5 +70,5 @@ jp:
       not_found: "not found"
       not_locked: "was not locked"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: "エラーが1個所あります"
+        other: "エラーが複数あります"

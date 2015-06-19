@@ -20,8 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
-  view:
-    name: "名前"
-    email: "メールアドレス"
-    password: "パスワード"
-    password_confirm: "パスワード(確認)"
+  mypage:
+    title: "マイページ"
+    message: "ようこそ"
