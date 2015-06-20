@@ -45,7 +45,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">B5GWS</a>
+        <a class="navbar-brand" href=<%= root_path %>><%= t('twitter.navbar.top') %></a>
         <div class="nav-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "Link1", "/path1"  %></li>
@@ -63,15 +63,15 @@
           <%= yield %>
         </div>
         <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
+          <% if user_signed_in? %>
+            <div class="well sidebar-nav">
+              <h3><%= t('twitter.sidebar.title') %></h3>
+              <ul class="nav nav-list">
+                <li><%= link_to t('twitter.sidebar.setting'), edit_user_registration_path, :class => "navbar-link"  %></li>
+                <li><%= link_to t('twitter.sidebar.logout'), destroy_user_session_path, method: :delete, :class => "navbar-link"  %></li>
+              </ul>
+            </div><!--/.well -->
+          <% end %>
         </div><!--/span-->
       </div><!--/row-->
 

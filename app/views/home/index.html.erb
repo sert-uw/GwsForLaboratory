@@ -1,8 +1,6 @@
 <h1><%= t('mypage.title') %></h1>
 <% if user_signed_in? %>
   <%= t('mypage.message') %> <strong><%= current_user.name %> (<%= current_user.group.name %>)</strong> さん <br /><br />
-  <%= link_to t('devise.labels.settings'), edit_user_registration_path, :class => "navbar-link" %> |
-  <%= link_to t('devise.labels.logout'), destroy_user_session_path, method: :delete, :class => "navbar-link" %>
 <% else %>
   <%= link_to t('devise.labels.sign_up'), new_user_registration_path, :class => 'navbar-link' %> |
   <%= link_to t('devise.labels.login'), new_user_session_path, :class => 'navbar-link' %>

@@ -1,0 +1,8 @@
+ja:
+  twitter:
+    navbar:
+      top: "トップ"
+    sidebar:
+      title: "メニュー"
+      setting: "アカウント設定"
+      logout: "ログアウト"
