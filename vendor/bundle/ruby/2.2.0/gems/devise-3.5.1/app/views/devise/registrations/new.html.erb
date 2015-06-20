@@ -17,12 +17,14 @@
 
   <br />
 
-  <div class="field">
-    <%= f.label t('devise.labels.grade') %><br />
-    <%= t('grade.b4') %> <%= f.radio_button 'grade', 0, { checked: true } %><br />
-    <%= t('grade.m1') %> <%= f.radio_button 'grade', 1, {} %><br />
-    <%= t('grade.m2') %> <%= f.radio_button 'grade', 2, {} %><br />
-  </div>
+  <% if @base_group.present? %>
+    <div class="field">
+      <%= f.label @base_group.name %><br />
+      <% @base_group.children.each do |group| %>
+        <%= group.name %> <%= f.radio_button :group_id, group.id, { checked: true } %><br />
+      <% end %>
+    </div>
+  <% end %>
 
   <br />
 
