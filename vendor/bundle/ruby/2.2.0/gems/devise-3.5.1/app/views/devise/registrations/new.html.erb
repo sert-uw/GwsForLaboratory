@@ -8,10 +8,23 @@
     <%= f.text_field :name, autofocus: true %>
   </div>
 
+  <br />
+
   <div class="field">
     <%= f.label t('devise.labels.email') %><br />
     <%= f.email_field :email %>
   </div>
+
+  <br />
+
+  <div class="field">
+    <%= f.label t('devise.labels.grade') %><br />
+    <%= t('grade.b4') %> <%= f.radio_button 'grade', 0, { checked: true } %><br />
+    <%= t('grade.m1') %> <%= f.radio_button 'grade', 1, {} %><br />
+    <%= t('grade.m2') %> <%= f.radio_button 'grade', 2, {} %><br />
+  </div>
+
+  <br />
 
   <div class="field">
     <%= f.label t('devise.labels.password') %><br />

@@ -8,6 +8,7 @@ ja:
       fogot_pass: "パスワードを忘れた方"
       name: "名前"
       email: "メールアドレス"
+      grade: "学年"
       password: "パスワード"
       password_confirm: "パスワード(確認)"
       current_password: "現在のパスワード"

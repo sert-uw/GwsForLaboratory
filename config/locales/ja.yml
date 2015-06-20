@@ -23,3 +23,7 @@ ja:
   mypage:
     title: "マイページ"
     message: "ようこそ"
+  grade:
+    b4: "4年"
+    m1: "M1"
+    m2: "M2"
