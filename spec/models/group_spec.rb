@@ -1,5 +1,14 @@
-require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe Group, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "validation" do
+    it { expect(build :group).to be_valid }
+    it { expect(build(:group, category: nil)).to be_valid }
+    it { expect(build(:group, name: nil)).not_to be_valid }
+  end
+
+  describe "inner group test" do
+    let(:parent) { create :group }
+    it { expect(parent.children.create(name: 'Children')).not_to eq nil }
+  end
 end
