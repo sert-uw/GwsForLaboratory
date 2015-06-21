@@ -13,10 +13,10 @@
     <%= f.email_field :email %>
   </div>
 
-  <% if @base_group.present? %>
+  <% if @base_groups.present? %>
     <div class="field">
-      <%= f.label @base_group.name %><br />
-      <% @base_group.children.each do |group| %>
+      <%= f.label @base_groups.name %><br />
+      <% @base_groups.children.each do |group| %>
         <%= group.name %> <%= f.radio_button :group_id, group.id, { checked: true } %><br />
       <% end %>
     </div>

@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Group.create(name: '学年', category: 'base_group')
-Group.find_by(category: 'base_group').children.create(name: '4年')
-Group.find_by(category: 'base_group').children.create(name: 'M1')
-Group.find_by(category: 'base_group').children.create(name: 'M2')
+Group.create(name: '学年', category: 'base_groups')
+Group.find_by(category: 'base_groups').children.create(name: '4年', category: 'base_group')
+Group.find_by(category: 'base_groups').children.create(name: 'M1', category: 'base_group')
+Group.find_by(category: 'base_groups').children.create(name: 'M2', category: 'base_group')
