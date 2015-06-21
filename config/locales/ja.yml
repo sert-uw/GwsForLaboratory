@@ -54,5 +54,8 @@ ja:
     title: "ユーザ一覧"
     name: "ユーザ名"
     email: "メールアドレス"
+    groups: "所属グループ"
     edit: "編集"
     destroy: "削除"
+    show: "ユーザ情報"
+    back: "ユーザ一覧へ"

@@ -5,6 +5,12 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def new
+  end
+
+  def show
+  end
+
   def destroy
     @user.destroy
     redirect_to users_path, notice: t('notice.users.delete')
