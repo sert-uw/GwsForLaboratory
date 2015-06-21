@@ -55,6 +55,7 @@ ja:
     name: "ユーザ名"
     email: "メールアドレス"
     groups: "所属グループ"
+    new: "ユーザ作成"
     edit: "編集"
     edit_title: "ユーザ情報編集"
     create: "登録"

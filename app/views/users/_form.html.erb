@@ -19,6 +19,18 @@
     <%= f.label t('users.email') %><br>
     <%= f.text_field :email %>
   </div>
+
+  <% if controller.action_name == "new" %>
+    <div class="field">
+      <%= f.label t('devise.labels.password') %> <br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+    <div class="field">
+      <%= f.label t('devise.labels.password_confirm') %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= f.label t('users.groups') %><br>
     <% @groups.each do |group| %>
