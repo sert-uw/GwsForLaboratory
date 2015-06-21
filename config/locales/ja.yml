@@ -43,6 +43,7 @@ ja:
     back: "グループ一覧へ"
     show: "グループ詳細"
   notice:
+    authority: "権限がありません"
     groups:
       create: "グループを作成しました"
       update: "グループを更新しました"
