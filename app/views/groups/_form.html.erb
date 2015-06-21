@@ -22,7 +22,7 @@
   <div class="field">
     <%= f.label t('groups.user') %><br>
     <% @users.each do |user| %>
-      <%= check_box_tag 'group[user_ids][]', user.id, checked=false, id: "user_#{user.id}" %> <%= user.name %><br />
+      <%= check_box_tag 'group[user_ids][]', user.id, checked=@group.users.exists?(id: user.id), id: "user_#{user.id}" %> <%= user.name %><br />
     <% end %>
   </div>
   <div class="actions">

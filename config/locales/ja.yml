@@ -33,12 +33,13 @@ ja:
     title: "グループ一覧"
     name: "グループ名"
     category: "カテゴリ"
-    edit: "編集"
-    destroy: "削除"
+    edit: "グループ設定"
+    destroy: "グループを削除"
     new: "グループを作成"
     user: "ユーザ"
     create: "作成"
     back: "グループ一覧へ"
+    show: "グループ詳細"
   notice:
     groups:
       create: "グループを作成しました"
