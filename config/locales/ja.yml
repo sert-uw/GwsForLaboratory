@@ -29,3 +29,10 @@ ja:
     m2: "M2"
   admin_page:
     title: "管理者画面"
+  groups:
+    title: "グループ一覧"
+    name: "グループ名"
+    category: "カテゴリ"
+    edit: "編集"
+    destroy: "削除"
+    new: "グループを作成"
