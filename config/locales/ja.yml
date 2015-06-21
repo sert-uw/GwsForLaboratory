@@ -36,3 +36,6 @@ ja:
     edit: "編集"
     destroy: "削除"
     new: "グループを作成"
+    user: "ユーザ"
+    create: "作成"
+    back: "グループ一覧へ"
