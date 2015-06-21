@@ -29,3 +29,19 @@ ja:
     m2: "M2"
   admin_page:
     title: "管理者画面"
+  groups:
+    title: "グループ一覧"
+    name: "グループ名"
+    category: "カテゴリ"
+    edit: "グループ設定"
+    destroy: "グループを削除"
+    new: "グループを作成"
+    user: "ユーザ"
+    create: "作成"
+    back: "グループ一覧へ"
+    show: "グループ詳細"
+  notice:
+    groups:
+      create: "グループを作成しました"
+      update: "グループを更新しました"
+      delete: "グループを削除しました"

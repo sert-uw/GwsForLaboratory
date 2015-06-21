@@ -12,14 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label t('groups.name') %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :category %><br>
+    <%= f.label t('groups.category') %><br>
     <%= f.text_field :category %>
   </div>
+  <div class="field">
+    <%= f.label t('groups.user') %><br>
+    <% @users.each do |user| %>
+      <%= check_box_tag 'group[user_ids][]', user.id, checked=@group.users.exists?(id: user.id), id: "user_#{user.id}" %> <%= user.name %><br />
+    <% end %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('groups.create') %>
   </div>
 <% end %>
