@@ -13,15 +13,6 @@
     <%= f.email_field :email %>
   </div>
 
-  <% if @base_groups.present? %>
-    <div class="field">
-      <%= f.label @base_groups.name %><br />
-      <% @base_groups.children.each do |group| %>
-        <%= group.name %> <%= f.radio_button :group_id, group.id, { checked: true } %><br />
-      <% end %>
-    </div>
-  <% end %>
-
   <div class="field">
     <%= f.label t('devise.labels.password') %><br />
     <% if @minimum_password_length %>

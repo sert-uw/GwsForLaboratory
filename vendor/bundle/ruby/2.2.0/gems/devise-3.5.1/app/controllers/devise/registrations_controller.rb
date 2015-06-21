@@ -4,7 +4,6 @@ class Devise::RegistrationsController < DeviseController
 
   # GET /resource/sign_up
   def new
-    @base_groups = Group.find_by(category: 'base_groups')
     build_resource({})
     set_minimum_password_length
     yield resource if block_given?
