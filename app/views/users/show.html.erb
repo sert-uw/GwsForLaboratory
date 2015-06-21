@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('users.show') %></h1>
+
+<p>
+  <strong><%= t('users.name') %>:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong><%= t('users.email') %>:</strong>
+  <%= @user.email %>
+</p>
+
+<div>
+  <strong><%= t('users.groups') %></strong><br />
+  <ul>
+  <% @user.groups.each do |group| %>
+    <li><%= group.name %></li>
+  <% end %>
+  </ul>
+</div>
+
+<%= link_to t('users.edit'), edit_user_path(@user) %> |
+<%= link_to t('users.back'), users_path %>

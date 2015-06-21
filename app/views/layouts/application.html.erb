@@ -68,7 +68,7 @@
               <h3><%= t('twitter.sidebar.title') %></h3>
               <ul class="nav nav-list">
                 <% if current_user.administrator? %>
-                  <li>アドミン</li>
+                  <li><%= link_to t('twitter.sidebar.admin'), admins_path, :class => "navbar-link"  %></li>
                 <% end %>
                 <li><%= link_to t('twitter.sidebar.setting'), edit_user_registration_path, :class => "navbar-link"  %></li>
                 <li><%= link_to t('twitter.sidebar.logout'), destroy_user_session_path, method: :delete, :class => "navbar-link"  %></li>

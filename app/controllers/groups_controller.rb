@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :authority_check
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   # GET /groups
@@ -15,10 +16,12 @@ class GroupsController < ApplicationController
   # GET /groups/new
   def new
     @group = Group.new
+    @users = User.all
   end
 
   # GET /groups/1/edit
   def edit
+    @users = User.all
   end
 
   # POST /groups
@@ -28,7 +31,7 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
+        format.html { redirect_to @group, notice: t('notice.groups.create') }
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new }
@@ -42,7 +45,7 @@ class GroupsController < ApplicationController
   def update
     respond_to do |format|
       if @group.update(group_params)
-        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
+        format.html { redirect_to @group, notice: t('notice.groups.update') }
         format.json { render :show, status: :ok, location: @group }
       else
         format.html { render :edit }
@@ -56,7 +59,7 @@ class GroupsController < ApplicationController
   def destroy
     @group.destroy
     respond_to do |format|
-      format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
+      format.html { redirect_to groups_url, notice: t('notice.groups.delete') }
       format.json { head :no_content }
     end
   end
@@ -69,6 +72,12 @@ class GroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
-      params.require(:group).permit(:name, :category)
+      params.require(:group).permit(:name, :category, :user_ids => []).merge(deletable: true)
+    end
+
+    def authority_check
+      unless current_user.administrator?
+        redirect_to root_path, notice: t('notice.authority')
+      end
     end
 end

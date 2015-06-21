@@ -1,14 +1,25 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= t('groups.show') %></h1>
+
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('groups.name') %>:</strong>
   <%= @group.name %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong><%= t('groups.category') %>:</strong>
   <%= @group.category %>
 </p>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<div>
+  <strong><%= t('groups.user') %></strong><br />
+  <ul>
+  <% @group.users.each do |user| %>
+    <li><%= user.name %></li>
+  <% end %>
+  </ul>
+</div>
+
+<%= link_to t('groups.edit'), edit_group_path(@group) %> |
+<%= link_to t('groups.back'), groups_path %>
