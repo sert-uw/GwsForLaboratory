@@ -4,5 +4,6 @@ ja:
       top: "トップ"
     sidebar:
       title: "メニュー"
+      admin: "管理者画面"
       setting: "アカウント設定"
       logout: "ログアウト"

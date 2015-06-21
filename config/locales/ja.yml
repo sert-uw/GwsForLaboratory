@@ -27,3 +27,5 @@ ja:
     b4: "4年"
     m1: "M1"
     m2: "M2"
+  admin_page:
+    title: "管理者画面"
