@@ -52,3 +52,4 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
+gem 'twitter-bootstrap3-rails'
