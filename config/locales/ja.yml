@@ -46,6 +46,10 @@ ja:
       create: "グループを作成しました"
       update: "グループを更新しました"
       delete: "グループを削除しました"
+    users:
+      create: "ユーザを作成しました"
+      update: "ユーザ情報を更新しました"
+      delete: "ユーザを削除しました"
   users:
     title: "ユーザ一覧"
     name: "ユーザ名"
