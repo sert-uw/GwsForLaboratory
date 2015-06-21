@@ -39,3 +39,8 @@ ja:
     user: "ユーザ"
     create: "作成"
     back: "グループ一覧へ"
+  notice:
+    groups:
+      create: "グループを作成しました"
+      update: "グループを更新しました"
+      delete: "グループを削除しました"
