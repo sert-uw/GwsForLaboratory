@@ -1,0 +1,2 @@
+class GroupTimetablesController < ApplicationController
+end
