@@ -52,6 +52,8 @@ ja:
       create: "ユーザを作成しました"
       update: "ユーザ情報を更新しました"
       delete: "ユーザを削除しました"
+    timetable:
+      update: "時間割を更新しました"
   users:
     title: "ユーザ一覧"
     name: "ユーザ名"
@@ -64,3 +66,16 @@ ja:
     destroy: "削除"
     show: "ユーザ情報"
     back: "ユーザ一覧へ"
+  timetable:
+    user_name: "ユーザ名"
+    edit: "変更"
+    edit_title: "時間割の変更"
+    back: "戻る"
+    classes: "コマ"
+    day_of_week: "曜日"
+    monday: "月曜"
+    tuesday: "火曜"
+    wednesday: "水曜"
+    thursday: "木曜"
+    friday: "金曜"
+    update: "変更"

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('timetable.user_name') %>:</strong>
+  <%= @timetable.user.name %>
+</p>
+
+<table>
+  <tr>
+    <td><%= t('timetable.classes') %></td>
+    <td><%= t('timetable.monday') %></td>
+    <td><%= t('timetable.tuesday') %></td>
+    <td><%= t('timetable.wednesday') %></td>
+    <td><%= t('timetable.thursday') %></td>
+    <td><%= t('timetable.friday') %></td>
+  </tr>
+
+  <% @timetable.get_ordered_items.each do |item| %>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= item.first ? 'o' : '' %></td>
+      <td><%= item.second ? 'o' : '' %></td>
+      <td><%= item.third ? 'o' : '' %></td>
+      <td><%= item.fourth ? 'o' : '' %></td>
+      <td><%= item.fifth ? 'o' : '' %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to t('timetable.edit'), edit_timetable_path(@timetable) %>
