@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150621073524) do
+ActiveRecord::Schema.define(version: 20150622040441) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -25,6 +25,23 @@ ActiveRecord::Schema.define(version: 20150621073524) do
   create_table "groups_users", force: :cascade do |t|
     t.integer "group_id", limit: 4
     t.integer "user_id",  limit: 4
+  end
+
+  create_table "timetable_items", force: :cascade do |t|
+    t.integer  "timetable_id", limit: 4
+    t.boolean  "first",        limit: 1
+    t.boolean  "second",       limit: 1
+    t.boolean  "third",        limit: 1
+    t.boolean  "fourth",       limit: 1
+    t.boolean  "fifth",        limit: 1
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "timetables", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "users", force: :cascade do |t|
