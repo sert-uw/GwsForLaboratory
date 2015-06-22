@@ -21,5 +21,9 @@
   </ul>
 </div>
 
-<%= link_to t('users.edit'), edit_user_path(@user) %> |
-<%= link_to t('users.back'), users_path %>
+<% if current_user.administrator? %>
+  <%= link_to t('users.edit'), edit_user_path(@user) %> |
+  <%= link_to t('users.back'), users_path %>
+<% else %>
+  <%= link_to t('users.edit'), edit_user_registration_path, :class => "navbar-link" %>
+<% end %>

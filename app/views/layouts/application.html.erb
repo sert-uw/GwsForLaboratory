@@ -70,6 +70,8 @@
                 <% if current_user.administrator? %>
                   <li><%= link_to t('twitter.sidebar.admin'), admins_path, :class => "navbar-link"  %></li>
                 <% end %>
+                <li><%= link_to t('twitter.sidebar.group_show'), groups_path, :class => "navbar-link"  %></li>
+                <li><%= link_to t('twitter.sidebar.show'), user_path(current_user), :class => "navbar-link"  %></li>
                 <li><%= link_to t('twitter.sidebar.setting'), edit_user_registration_path, :class => "navbar-link"  %></li>
                 <li><%= link_to t('twitter.sidebar.logout'), destroy_user_session_path, method: :delete, :class => "navbar-link"  %></li>
               </ul>

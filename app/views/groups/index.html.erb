@@ -16,9 +16,11 @@
       <tr>
         <td><%= link_to group.name, group %></td>
         <td><%= group.category %></td>
-        <% if group.deletable %>
-          <td><%= link_to t('groups.edit'), edit_group_path(group) %></td>
-          <td><%= link_to t('groups.destroy'), group, method: :delete, data: { confirm: '削除しますか?' } %></td>
+        <% if current_user.administrator? %>
+          <% if group.deletable %>
+            <td><%= link_to t('groups.edit'), edit_group_path(group) %></td>
+            <td><%= link_to t('groups.destroy'), group, method: :delete, data: { confirm: '削除しますか?' } %></td>
+          <% end %>
         <% end %>
       </tr>
     <% end %>
@@ -27,4 +29,6 @@
 
 <br>
 
-<%= link_to t('groups.new'), new_group_path %>
+<% if current_user.administrator? %>
+  <%= link_to t('groups.new'), new_group_path %>
+<% end %>
