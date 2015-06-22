@@ -5,6 +5,7 @@ ja:
     sidebar:
       title: "メニュー"
       admin: "管理者画面"
+      group_show: "グループ情報"
       show: "アカウント情報"
       setting: "アカウント設定"
       logout: "ログアウト"

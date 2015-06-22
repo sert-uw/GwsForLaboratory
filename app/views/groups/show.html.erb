@@ -16,10 +16,12 @@
   <strong><%= t('groups.user') %></strong><br />
   <ul>
   <% @group.users.each do |user| %>
-    <li><%= user.name %></li>
+    <li><%= user.name %> : <%= user.email %></li>
   <% end %>
   </ul>
 </div>
 
-<%= link_to t('groups.edit'), edit_group_path(@group) %> |
+<% if current_user.administrator? %>
+  <%= link_to t('groups.edit'), edit_group_path(@group) %> |
+<% end %>
 <%= link_to t('groups.back'), groups_path %>

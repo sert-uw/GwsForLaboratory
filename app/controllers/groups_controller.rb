@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :authority_check
+  before_action :authority_check, only: [:new, :edit, :create, :destroy]
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   # GET /groups
