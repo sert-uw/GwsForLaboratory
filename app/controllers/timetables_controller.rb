@@ -43,12 +43,13 @@ class TimetablesController < ApplicationController
     end
 
     def load_timetable
-      timetable = Timetable.find_by(user_id: current_user.id)
+      #timetable = Timetable.find_by(user_id: current_user.id)
 
-      unless timetable.present?
-        timetable = Timetable.create(user_id: current_user.id)
+      unless current_user.timetable.present?
+        current_user.timetable = Timetable.create(user_id: current_user.id)
+        current_user.save
       end
 
-      redirect_to timetable_path(timetable)
+      redirect_to timetable_path(current_user.timetable)
     end
 end

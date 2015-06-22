@@ -5,7 +5,11 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    if current_user.administrator?
+      @groups = Group.all
+    else
+      @groups = Group.where.not(category: 'administrator')
+    end
   end
 
   # GET /groups/1

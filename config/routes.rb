@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :admins
-  resources :groups
+  resources :groups do
+    resources :group_timetables
+  end
+
   resources :users
   resources :timetables, only: [:index, :show, :edit, :update]
-  resources :group_timetables
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

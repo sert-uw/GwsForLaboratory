@@ -12,6 +12,8 @@
     <tr>
       <td><%= link_to group.name, group %></td>
       <td><%= group.category %></td>
+      <td><%= link_to t('groups.timetable'), group_group_timetables_path(group) %></td>
+
       <% if current_user.administrator? %>
         <% if group.deletable %>
           <td><%= link_to t('groups.edit'), edit_group_path(group) %></td>

@@ -42,6 +42,7 @@ ja:
     create: "作成"
     back: "グループ一覧へ"
     show: "グループ詳細"
+    timetable: "時間割"
   notice:
     authority: "権限がありません"
     groups:
@@ -79,3 +80,5 @@ ja:
     thursday: "木曜"
     friday: "金曜"
     update: "変更"
+  group_timetable:
+    title: "グループ時間割"

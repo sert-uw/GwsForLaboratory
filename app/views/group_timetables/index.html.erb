@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @group.name + t('group_timetable.title')%></h1>
+
+<table>
+  <tr>
+    <td><%= t('timetable.classes') %></td>
+    <td><%= t('timetable.monday') %></td>
+    <td><%= t('timetable.tuesday') %></td>
+    <td><%= t('timetable.wednesday') %></td>
+    <td><%= t('timetable.thursday') %></td>
+    <td><%= t('timetable.friday') %></td>
+  </tr>
+
+  <% @timetable.each_with_index do |item, idx| %>
+    <tr>
+      <td><%= idx + 1 %></td>
+      <% item.each do |flag| %>
+        <td><%= flag ? 'o' : '' %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
