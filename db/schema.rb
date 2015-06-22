@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622040441) do
+ActiveRecord::Schema.define(version: 20150622041353) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -29,13 +29,14 @@ ActiveRecord::Schema.define(version: 20150622040441) do
 
   create_table "timetable_items", force: :cascade do |t|
     t.integer  "timetable_id", limit: 4
-    t.boolean  "first",        limit: 1
-    t.boolean  "second",       limit: 1
-    t.boolean  "third",        limit: 1
-    t.boolean  "fourth",       limit: 1
-    t.boolean  "fifth",        limit: 1
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.boolean  "first",        limit: 1,   default: false
+    t.boolean  "second",       limit: 1,   default: false
+    t.boolean  "third",        limit: 1,   default: false
+    t.boolean  "fourth",       limit: 1,   default: false
+    t.boolean  "fifth",        limit: 1,   default: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.string   "name",         limit: 255
   end
 
   create_table "timetables", force: :cascade do |t|
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20150622040441) do
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
     t.string   "name",                   limit: 255
+    t.integer  "timetable_id",           limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
