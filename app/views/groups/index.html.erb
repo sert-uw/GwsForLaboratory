@@ -3,28 +3,23 @@
 <h1><%= t('groups.title') %></h1>
 
 <table>
-  <thead>
-    <tr>
-      <th><%= t('groups.name') %></th>
-      <th><%= t('groups.category') %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <tr>
+    <td><strong><%= t('groups.name') %></strong></td>
+    <td><strong><%= t('groups.category') %></strong></td>
+  </tr>
 
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= link_to group.name, group %></td>
-        <td><%= group.category %></td>
-        <% if current_user.administrator? %>
-          <% if group.deletable %>
-            <td><%= link_to t('groups.edit'), edit_group_path(group) %></td>
-            <td><%= link_to t('groups.destroy'), group, method: :delete, data: { confirm: '削除しますか?' } %></td>
-          <% end %>
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= link_to group.name, group %></td>
+      <td><%= group.category %></td>
+      <% if current_user.administrator? %>
+        <% if group.deletable %>
+          <td><%= link_to t('groups.edit'), edit_group_path(group) %></td>
+          <td><%= link_to t('groups.destroy'), group, method: :delete, data: { confirm: '削除しますか?' } %></td>
         <% end %>
-      </tr>
-    <% end %>
-  </tbody>
+      <% end %>
+    </tr>
+  <% end %>
 </table>
 
 <br>
