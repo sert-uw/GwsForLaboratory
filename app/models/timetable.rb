@@ -1,5 +1,5 @@
 class Timetable < ActiveRecord::Base
-  before_save :create_items
+  before_create :create_items
 
   belongs_to :user
 

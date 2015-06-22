@@ -17,14 +17,17 @@ class TimetablesController < ApplicationController
   # PATCH/PUT /timetables/1
   # PATCH/PUT /timetables/1.json
   def update
+    timetable_params.each do |param|
+      item = @timetable.items.find(param[0])
+      param[1].each do |idx|
+        item[idx.to_s] = true
+      end
+      item.save
+    end
+
     respond_to do |format|
-      if @timetable.update(timetable_params)
         format.html { redirect_to @timetable, notice: 'Timetable was successfully updated.' }
         format.json { render :show, status: :ok, location: @timetable }
-      else
-        format.html { render :edit }
-        format.json { render json: @timetable.errors, status: :unprocessable_entity }
-      end
     end
   end
 
@@ -36,7 +39,7 @@ class TimetablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def timetable_params
-      params.require(:timetable).permit(:user_id)
+      params.require(:items)
     end
 
     def load_timetable

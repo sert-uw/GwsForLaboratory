@@ -18,11 +18,11 @@
   <% @timetable.get_ordered_items.each do |item| %>
     <tr>
       <td><%= item.name %></td>
-      <td><%= item.first ? x : '' %></td>
-      <td><%= item.second  ? x : '' %></td>
-      <td><%= item.third  ? x : '' %></td>
-      <td><%= item.fourth  ? x : '' %></td>
-      <td><%= item.fifth  ? x : '' %></td>
+      <td><%= item.first ? 'o' : '' %></td>
+      <td><%= item.second ? 'o' : '' %></td>
+      <td><%= item.third ? 'o' : '' %></td>
+      <td><%= item.fourth ? 'o' : '' %></td>
+      <td><%= item.fifth ? 'o' : '' %></td>
     </tr>
   <% end %>
 </table>
