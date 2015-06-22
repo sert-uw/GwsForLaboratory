@@ -39,7 +39,7 @@ ja:
     destroy: "グループを削除"
     new: "グループを作成"
     user: "ユーザ"
-    create: "作成"
+    decide: "決定"
     back: "グループ一覧へ"
     show: "グループ詳細"
     timetable: "時間割"
