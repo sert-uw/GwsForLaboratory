@@ -26,7 +26,7 @@ class TimetablesController < ApplicationController
     end
 
     respond_to do |format|
-        format.html { redirect_to @timetable, notice: 'Timetable was successfully updated.' }
+        format.html { redirect_to @timetable, notice: t('notice.timetable.update') }
         format.json { render :show, status: :ok, location: @timetable }
     end
   end
